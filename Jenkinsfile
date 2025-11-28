@@ -46,9 +46,8 @@ pipeline {
         }
         success {
             mail to: 'kpbindu1309@gmail.com',
-                 subject: "FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                 body: """Job '${env.JOB_NAME}' build #${env.BUILD_NUMBER} failed.
-                 Check console output at ${env.BUILD_URL}console"""
+                 subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "Job '${env.JOB_NAME}' succeeded. ${env.BUILD_URL}"
         }
     }
 }
