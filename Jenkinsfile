@@ -45,7 +45,10 @@ pipeline {
                  Check console output at ${env.BUILD_URL}console"""
         }
         success {
-            echo "Build Success"
+            mail to: 'kpbindu1309@gmail.com',
+                 subject: "FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: """Job '${env.JOB_NAME}' build #${env.BUILD_NUMBER} failed.
+                 Check console output at ${env.BUILD_URL}console"""
         }
     }
 }
